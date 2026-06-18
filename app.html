@@ -1,0 +1,183 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>CreatorBoard App</title>
+    <link rel="stylesheet" href="./app.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <header class="app-header">
+        <div>
+          <a class="brand" href="./index.html">CreatorBoard</a>
+          <p>Creator ads queue for IG DMs, Sheets, next steps, and payment state.</p>
+        </div>
+        <div class="header-actions">
+          <button id="exportButton" type="button">Export CSV</button>
+          <button id="clearButton" class="quiet-button" type="button">Clear local data</button>
+        </div>
+      </header>
+
+      <main class="app-grid">
+        <aside class="sidebar" aria-label="Imports and filters">
+          <section class="panel import-panel">
+            <h2>Import</h2>
+            <label class="file-drop">
+              <input id="creatorFiles" type="file" accept=".csv" multiple />
+              <strong>Creator sheets</strong>
+              <span>WL A / WL B CSV files</span>
+            </label>
+            <label class="file-drop">
+              <input id="spendFiles" type="file" accept=".csv" multiple />
+              <strong>Spend sheets</strong>
+              <span>Meta / YouTube CSV files</span>
+            </label>
+            <button id="seedButton" type="button">Load sample workflow</button>
+          </section>
+
+          <section class="panel">
+            <h2>Instagram sync</h2>
+            <p class="hint" id="instagramStatus">Run the local connector to pull IG DMs.</p>
+            <div class="form-row">
+              <label>
+                Threads
+                <input id="instagramLimit" type="number" min="1" max="50" value="25" />
+              </label>
+              <label>
+                Messages
+                <input id="instagramMessageLimit" type="number" min="1" max="10" value="3" />
+              </label>
+            </div>
+            <button id="syncInstagramButton" type="button">Sync Instagram DMs</button>
+          </section>
+
+          <section class="panel">
+            <h2>Add IG DM</h2>
+            <form id="dmForm" class="dm-form">
+              <label>
+                Creator or handle
+                <input id="dmIdentity" type="text" placeholder="@handle or name" maxlength="120" />
+              </label>
+              <label>
+                Last message
+                <textarea id="dmMessage" rows="4" maxlength="1200" placeholder="Paste the latest DM"></textarea>
+              </label>
+              <div class="form-row">
+                <label>
+                  Direction
+                  <select id="dmDirection">
+                    <option value="inbound">Creator replied</option>
+                    <option value="outbound">Team sent</option>
+                  </select>
+                </label>
+                <label>
+                  Time
+                  <input id="dmTime" type="text" value="now" maxlength="40" />
+                </label>
+              </div>
+              <button type="submit">Add to queue</button>
+            </form>
+          </section>
+
+          <section class="panel">
+            <h2>Paste DM CSV</h2>
+            <p class="hint">Columns accepted: name, handle, message, direction, time.</p>
+            <textarea id="dmCsvText" rows="7" placeholder="handle,message,direction,time&#10;@lacefit_fitness,Interested,inbound,24m"></textarea>
+            <button id="importDmCsvButton" type="button">Import pasted DMs</button>
+          </section>
+
+          <section class="panel">
+            <h2>Filters</h2>
+            <label>
+              Search
+              <input id="searchInput" type="search" placeholder="Name, handle, code, note" />
+            </label>
+            <label>
+              Queue
+              <select id="queueFilter"></select>
+            </label>
+            <label>
+              Owner
+              <select id="ownerFilter"></select>
+            </label>
+          </section>
+        </aside>
+
+        <section class="workbench">
+          <div class="metrics" id="metrics"></div>
+
+          <section class="queue-card">
+            <div class="queue-head">
+              <div>
+                <h1>DM Queue</h1>
+                <p id="summaryText">Import a creator sheet or load sample workflow.</p>
+              </div>
+              <div class="view-tabs" role="tablist" aria-label="Queue views">
+                <button class="active" data-view="queue" type="button">Queue</button>
+                <button data-view="unmatched" type="button">Unmatched</button>
+              </div>
+            </div>
+            <div class="creator-table" id="creatorTable"></div>
+          </section>
+        </section>
+
+        <aside class="detail-panel" aria-label="Creator details">
+          <div id="detailEmpty" class="empty-state">
+            <h2>No creator selected</h2>
+            <p>Select someone from the queue to update status, next step, and partnership fields.</p>
+          </div>
+
+          <div id="detailContent" class="detail-content" hidden>
+            <div class="detail-title">
+              <div class="avatar" id="detailAvatar"></div>
+              <div>
+                <p id="detailHandle"></p>
+                <h2 id="detailName"></h2>
+              </div>
+            </div>
+
+            <div class="status-grid">
+              <label>
+                Owner
+                <select id="ownerSelect"></select>
+              </label>
+              <label>
+                Status
+                <select id="statusSelect"></select>
+              </label>
+            </div>
+
+            <label>
+              Next step
+              <textarea id="nextStepInput" rows="3" maxlength="800"></textarea>
+            </label>
+            <button id="saveDetailButton" type="button">Save changes</button>
+
+            <section class="detail-section">
+              <h3>Latest DM</h3>
+              <div id="latestDm" class="latest-dm"></div>
+            </section>
+
+            <section class="detail-section">
+              <h3>Checklist</h3>
+              <div id="checklist" class="checklist"></div>
+            </section>
+
+            <section class="detail-section">
+              <h3>Creator</h3>
+              <dl id="creatorFacts" class="facts"></dl>
+            </section>
+
+            <section class="detail-section">
+              <h3>Spend</h3>
+              <dl id="spendFacts" class="facts"></dl>
+            </section>
+          </div>
+        </aside>
+      </main>
+    </div>
+
+    <script src="./app.js"></script>
+  </body>
+</html>
