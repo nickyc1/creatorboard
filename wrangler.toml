@@ -1,0 +1,18 @@
+name = "creatorboard-app"
+main = "src/worker.js"
+compatibility_date = "2026-07-08"
+
+routes = [
+  { pattern = "app.creatorboard.io/*", zone_name = "creatorboard.io" }
+]
+
+[assets]
+directory = "./public"
+binding = "ASSETS"
+
+[vars]
+AUTH_REQUIRED = "true"
+AUTH_ALLOWED_EMAILS = "nick@raxdigital.com"
+AUTH_EMAIL_FROM = "CreatorBoard <login@creatorboard.io>"
+META_GRAPH_VERSION = "v25.0"
+INSTAGRAM_GRAPH_BASE = "https://graph.instagram.com"

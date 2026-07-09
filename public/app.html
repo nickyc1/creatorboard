@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>CreatorBoard App</title>
+    <link rel="stylesheet" href="./app.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <header class="app-header">
+        <div>
+          <a class="brand" href="./index.html">CreatorBoard</a>
+          <p>Creator DM triage for replies, content, payments, and team follow-up.</p>
+        </div>
+        <div class="header-actions">
+          <button id="syncInstagramButton" type="button">Sync Instagram</button>
+          <label class="compact-file">
+            <input id="creatorFiles" type="file" accept=".csv" multiple />
+            Roster CSV
+          </label>
+          <label class="compact-file">
+            <input id="spendFiles" type="file" accept=".csv" multiple />
+            Spend CSV
+          </label>
+          <button id="seedButton" class="quiet-button" type="button">Sample</button>
+          <button id="exportButton" type="button">Export CSV</button>
+          <button id="clearButton" class="quiet-button" type="button">Clear local data</button>
+        </div>
+      </header>
+
+      <section class="top-toolbar" aria-label="Inbox controls">
+        <div class="sync-status">
+          <p id="instagramStatus">Run the local connector to pull IG DMs.</p>
+          <label>
+            Threads
+            <input id="instagramLimit" type="number" min="1" max="500" value="500" />
+          </label>
+          <label>
+            Msgs
+            <input id="instagramMessageLimit" type="number" min="0" max="1000" value="0" title="0 imports all available messages up to the safety cap" />
+          </label>
+        </div>
+        <div class="toolbar-filters">
+          <input id="searchInput" type="search" placeholder="Search creators or message text" />
+          <select id="queueFilter"></select>
+          <select id="ownerFilter"></select>
+        </div>
+      </section>
+
+      <main class="app-grid">
+        <section class="workbench">
+          <div class="metrics" id="metrics"></div>
+
+          <section class="queue-card">
+            <div class="queue-head">
+              <div>
+                <h1>Action Inbox</h1>
+                <p id="summaryText">Import a creator sheet or load sample workflow.</p>
+              </div>
+              <div class="view-tabs" role="tablist" aria-label="Inbox views"></div>
+            </div>
+            <div class="creator-table" id="creatorTable"></div>
+            <div class="pagination" id="pagination"></div>
+          </section>
+        </section>
+
+        <aside class="detail-panel" aria-label="Creator details">
+          <div id="detailEmpty" class="empty-state">
+            <h2>No creator selected</h2>
+            <p>Select someone from the queue to update status, next step, and partnership fields.</p>
+          </div>
+
+          <div id="detailContent" class="detail-content" hidden>
+            <div class="detail-title">
+              <div class="avatar" id="detailAvatar"></div>
+              <div>
+                <p id="detailHandle"></p>
+                <h2 id="detailName"></h2>
+              </div>
+              <span id="detailStatusPill" class="status-pill"></span>
+              <button id="closeDetailButton" class="icon-button" type="button" aria-label="Close creator details">×</button>
+            </div>
+
+            <section class="ai-card">
+              <p>Suggested next step</p>
+              <div id="aiSummary"></div>
+            </section>
+
+            <div class="status-grid">
+              <label>
+                Owner
+                <select id="ownerSelect"></select>
+              </label>
+              <label>
+                Status
+                <select id="statusSelect"></select>
+              </label>
+            </div>
+
+            <label>
+              Next step
+              <textarea id="nextStepInput" rows="3" maxlength="800"></textarea>
+            </label>
+            <div class="detail-actions">
+              <button id="saveDetailButton" type="button">Save</button>
+              <button id="markDoneButton" class="quiet-button" type="button">No action needed</button>
+              <button id="markPausedButton" class="quiet-button" type="button">Not working</button>
+            </div>
+
+            <section class="detail-section">
+              <h3>Thread context</h3>
+              <div id="latestDm" class="latest-dm"></div>
+              <div id="threadHistory" class="thread-history"></div>
+            </section>
+
+            <section class="detail-section">
+              <h3>Reply</h3>
+              <p id="replyHint" class="hint">Sync Instagram DMs to enable replies.</p>
+              <textarea id="replyMessage" rows="4" maxlength="1200" placeholder="Write a short creator reply"></textarea>
+              <button id="sendReplyButton" type="button">Send IG reply</button>
+            </section>
+
+            <section class="detail-section">
+              <h3>Checklist</h3>
+              <div id="checklist" class="checklist"></div>
+            </section>
+
+            <section class="detail-section">
+              <h3>Creator</h3>
+              <dl id="creatorFacts" class="facts"></dl>
+            </section>
+
+            <section class="detail-section">
+              <h3>Spend</h3>
+              <dl id="spendFacts" class="facts"></dl>
+            </section>
+          </div>
+        </aside>
+      </main>
+    </div>
+
+    <script src="./app.js"></script>
+  </body>
+</html>
