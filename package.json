@@ -1,0 +1,13 @@
+{
+  "name": "creatorboard",
+  "version": "0.1.0",
+  "private": true,
+  "description": "CreatorBoard creator DM action inbox",
+  "scripts": {
+    "start": "node server.js",
+    "check": "node --check server.js && node --check app.js && node --check login.js"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}
