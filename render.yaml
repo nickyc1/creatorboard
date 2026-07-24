@@ -2,9 +2,9 @@ services:
   - type: web
     name: creatorboard-app
     runtime: node
-    buildCommand: npm install
-    startCommand: npm start
-    healthCheckPath: /api/session
+    buildCommand: corepack enable && pnpm install --frozen-lockfile && pnpm build
+    startCommand: pnpm start
+    healthCheckPath: /
     envVars:
       - key: AUTH_REQUIRED
         value: "true"
