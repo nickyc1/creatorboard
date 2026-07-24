@@ -2,8 +2,22 @@ import { NextRequest, NextResponse } from "next/server";
 
 const STATE_COOKIE = "cb_meta_oauth_state";
 
+function getAppOrigin(request: NextRequest) {
+  if (process.env.NEXT_PUBLIC_APP_URL) {
+    return process.env.NEXT_PUBLIC_APP_URL;
+  }
+
+  const forwardedHost = request.headers.get("x-forwarded-host");
+  const forwardedProto = request.headers.get("x-forwarded-proto") || "https";
+  if (forwardedHost) {
+    return `${forwardedProto}://${forwardedHost}`;
+  }
+
+  return new URL(request.url).origin;
+}
+
 function setupRedirect(request: NextRequest, params: Record<string, string>) {
-  const url = new URL("/setup", request.url);
+  const url = new URL("/setup", getAppOrigin(request));
   for (const [key, value] of Object.entries(params)) {
     url.searchParams.set(key, value);
   }
