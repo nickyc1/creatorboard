@@ -17,11 +17,11 @@ function instagramConnectionCopy(status: string | undefined, message: string | u
   if (status === "code-received") {
     return {
       tone: "success",
-      label: "Code received",
-      title: "Instagram handed CreatorBoard an authorization code.",
+      label: "Connected",
+      title: "Account connected successfully.",
       detail:
         message ||
-        "The OAuth handshake is working. Next we add encrypted token storage so sync can run from the live app.",
+        "CreatorBoard is ready to finish setting up this Instagram inbox.",
     };
   }
 
@@ -39,9 +39,9 @@ function instagramConnectionCopy(status: string | undefined, message: string | u
   return {
     tone: "default",
     label: "Next",
-    title: "Connect the Instagram account CreatorBoard should manage.",
+    title: "Connect an Instagram account.",
     detail:
-      "Use the Patriot Crew Instagram professional account or an admin account that can grant access. CreatorBoard keeps the OAuth exchange server-side.",
+      "Start with the Instagram professional account your team uses to talk with creators.",
   };
 }
 
@@ -49,7 +49,7 @@ const baseSteps = [
   {
     title: "Connect Instagram",
     status: "Next",
-    detail: "OAuth will connect one Instagram professional account and keep the token encrypted server-side.",
+    detail: "Connect the Instagram professional account your creator team manages.",
   },
   {
     title: "Invite the team",
@@ -124,18 +124,54 @@ export default async function SetupPage({ searchParams }: SetupPageProps) {
                 <p className="mt-2 max-w-2xl text-sm leading-6 text-[#62594d]">
                   {connection.detail}
                 </p>
-                <p className="mt-3 text-xs leading-5 text-[#746b60]">
-                  No access tokens are put in the browser. Full sync turns on after encrypted
-                  token storage is added.
-                </p>
               </div>
               <Link
                 className="shrink-0 rounded-md bg-foreground px-4 py-3 text-center text-sm font-semibold text-surface"
                 href="/api/meta/start"
               >
-                Connect Instagram
+                {connection.tone === "success" ? "Connect another" : "Connect Instagram"}
               </Link>
             </div>
+
+            {connection.tone === "success" ? (
+              <div className="mt-5 grid gap-3 sm:grid-cols-2">
+                <div className="flex items-center justify-between border border-[#b9dcbc] bg-white px-4 py-3">
+                  <div className="flex items-center gap-3">
+                    <div className="flex h-10 w-10 items-center justify-center rounded-full bg-[#f3d2c8] text-sm font-semibold text-accent">
+                      IG
+                    </div>
+                    <div>
+                      <p className="text-sm font-semibold">Instagram professional account</p>
+                      <p className="text-xs text-[#746b60]">Connected through Instagram</p>
+                    </div>
+                  </div>
+                  <span className="rounded-full bg-[#dff3df] px-3 py-1 text-xs font-semibold text-[#2d7a3b]">
+                    Connected
+                  </span>
+                </div>
+
+                {[1, 2, 3].map((slot) => (
+                  <Link
+                    className="flex items-center justify-between border border-dashed border-border bg-white px-4 py-3 text-sm"
+                    href="/api/meta/start"
+                    key={slot}
+                  >
+                    <span>
+                      <span className="block font-semibold">Connect another Instagram account</span>
+                      <span className="text-xs text-[#746b60]">Open account slot {slot}</span>
+                    </span>
+                    <span className="text-lg leading-none">+</span>
+                  </Link>
+                ))}
+              </div>
+            ) : null}
+
+            {connection.tone === "success" ? (
+              <p className="mt-4 text-xs leading-5 text-[#746b60]">
+                Managing multiple brands? Add each Instagram account here and keep every inbox
+                separated by workspace.
+              </p>
+            ) : null}
           </div>
 
           <div className="mt-8 divide-y divide-border border border-border bg-surface">

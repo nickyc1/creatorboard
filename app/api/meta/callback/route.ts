@@ -61,6 +61,6 @@ export function GET(request: NextRequest) {
 
   return setupRedirect(request, {
     instagram: "code-received",
-    message: "Instagram returned an authorization code. Token storage is the next build step.",
+    message: "CreatorBoard is ready to finish setting up this Instagram inbox.",
   });
 }

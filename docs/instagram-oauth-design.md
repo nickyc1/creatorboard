@@ -33,6 +33,8 @@ account before the inbox can sync creator conversations.
 - Redirect handling: redirects only target local CreatorBoard setup URLs.
 - Token safety: no tokens are sent to the browser, written to logs, or stored in
   localStorage.
+- Setup success UI: the browser only receives coarse connection status and
+  never renders OAuth codes, token values, or token-exchange details.
 - Secrets: app secret is not committed. The later token exchange must use a
   Render secret environment variable.
 
