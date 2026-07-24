@@ -14,6 +14,12 @@ services:
         generateValue: true
       - key: AUTH_EMAIL_FROM
         value: CreatorBoard <login@creatorboard.io>
+      - key: NEXT_PUBLIC_APP_URL
+        value: https://app.creatorboard.io
+      - key: INSTAGRAM_CLIENT_ID
+        value: "1561224192303691"
+      - key: META_OAUTH_REDIRECT_URI
+        value: https://app.creatorboard.io/api/meta/callback
       - key: META_GRAPH_VERSION
         value: v25.0
       - key: INSTAGRAM_GRAPH_BASE
