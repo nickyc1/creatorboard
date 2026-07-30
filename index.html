@@ -3,215 +3,172 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>CreatorBoard | Creator ads hub for Shopify teams</title>
-    <link rel="icon" href="/assets/favicon.png" />
-    <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
+    <meta
+      name="description"
+      content="CreatorBoard turns creator Instagram DMs into a shared action inbox for replies, content, access, and payments."
+    />
+    <meta property="og:title" content="CreatorBoard | Stop losing creator money in Instagram DMs" />
+    <meta
+      property="og:description"
+      content="Give every creator conversation a clear owner, status, and next action."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://creatorboard.io/" />
+    <title>CreatorBoard | Stop losing creator money in Instagram DMs</title>
+    <link rel="icon" href="./assets/favicon.png" />
+    <link rel="apple-touch-icon" href="./assets/apple-touch-icon.png" />
     <link rel="stylesheet" href="./styles.css" />
   </head>
   <body>
     <header class="site-header">
-      <a class="brand" href="/">CreatorBoard</a>
-      <nav class="nav-links" aria-label="Primary">
-        <a href="#problems">Problems</a>
-        <a href="#hub">Hub</a>
-        <a href="#offerings">Offerings</a>
+      <a class="wordmark" href="/" aria-label="CreatorBoard home">CreatorBoard</a>
+      <nav aria-label="Primary">
+        <a href="#problem">Why</a>
+        <a href="#workflow">Workflow</a>
+        <a href="#pricing">Pricing</a>
       </nav>
-      <a class="header-cta" href="./login.html">Log in</a>
+      <a class="header-action" href="https://app.creatorboard.io/login">Open CreatorBoard <span aria-hidden="true">→</span></a>
     </header>
 
     <main>
       <section class="hero">
-        <div class="hero-copy">
-          <p class="eyebrow">For Shopify teams running creator ads</p>
-          <h1>Keep every creator, ad, payment, and next step in one quiet place.</h1>
-          <p class="hero-lede">
-            Built for teams running heavy Meta partnership ads, growing YouTube creator spend, Instagram DMs everywhere, and spreadsheets that do more than most software.
-          </p>
-          <div class="hero-actions">
-            <a class="primary-button" href="./login.html">Open CreatorBoard</a>
-            <a class="secondary-button" href="#problems">See what it replaces</a>
+        <div class="paper hero-paper">
+          <div class="paper-fold" aria-hidden="true"></div>
+          <div class="hero-copy">
+            <p class="label">For teams running creator ads</p>
+            <h1>Stop losing creator money in Instagram DMs.</h1>
+            <p class="hero-lede">
+              CreatorBoard turns every creator conversation into a clear owner,
+              status, and next action.
+            </p>
+            <div class="button-row">
+              <a class="button primary-button" href="https://app.creatorboard.io/login">Start organizing <span aria-hidden="true">→</span></a>
+              <a class="text-link" href="#problem">See what it fixes</a>
+            </div>
+          </div>
+
+          <div class="product-scene" aria-label="Illustration of the CreatorBoard action inbox">
+            <div class="scene-note note-one">17 need action</div>
+            <div class="scene-note note-two">Payment question</div>
+            <div class="scene-window">
+              <div class="window-bar">
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+                <span aria-hidden="true"></span>
+                <strong>Action inbox</strong>
+              </div>
+              <div class="window-body">
+                <div class="queue">
+                  <div class="queue-row selected">
+                    <span class="initials">AC</span>
+                    <div><strong>Avery Cole</strong><small>Needs reply · 24m</small></div>
+                  </div>
+                  <div class="queue-row">
+                    <span class="initials">MR</span>
+                    <div><strong>Morgan Reid</strong><small>Content uploaded · 2h</small></div>
+                  </div>
+                  <div class="queue-row">
+                    <span class="initials">JS</span>
+                    <div><strong>Jordan Sage</strong><small>Payment question · 4h</small></div>
+                  </div>
+                </div>
+                <div class="thread">
+                  <div class="thread-title"><strong>@averyfit</strong><span>Alex</span></div>
+                  <p class="bubble">Can I send the YouTube cut too or just IG?</p>
+                  <div class="next-action">
+                    <small>Next action</small>
+                    <strong>Reply yes, then confirm the IG cut is first.</strong>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
 
-        <div class="product-visual" aria-label="Creator Desk product preview">
-          <div class="visual-toolbar">
-            <span>Creator Desk</span>
-            <strong>17 need attention</strong>
-          </div>
-          <div class="visual-grid">
-            <aside class="mini-inbox">
-              <div class="mini-row active">
-                <span class="avatar">AC</span>
-                <div>
-                  <strong>Avery Cole</strong>
-                  <p>Needs reply · 24m</p>
-                </div>
-              </div>
-              <div class="mini-row">
-                <span class="avatar">MR</span>
-                <div>
-                  <strong>Morgan Reid</strong>
-                  <p>Wants upload folder · 11h</p>
-                </div>
-              </div>
-              <div class="mini-row">
-                <span class="avatar">RK</span>
-                <div>
-                  <strong>Riley Knox</strong>
-                  <p>Missing shipping · 2h</p>
-                </div>
-              </div>
-              <div class="mini-row">
-                <span class="avatar">JS</span>
-                <div>
-                  <strong>Jordan Sage</strong>
-                  <p>Access needed · 11h</p>
-                </div>
-              </div>
-            </aside>
-
-            <section class="mini-thread">
-              <div class="thread-head">
-                <div>
-                  <p>@averyfit</p>
-                  <h2>Avery Cole</h2>
-                </div>
-                <span class="status-pill">Ben</span>
-              </div>
-              <div class="message outbound">
-                Hey, Avery. We send free gear, you film simple raw videos, and we run the ads from your page.
-              </div>
-              <div class="action-line">
-                <span>Next step</span>
-                <strong>Need address, shirt size, PayPal, and partnership access.</strong>
-              </div>
-            </section>
-
-            <aside class="mini-details">
-              <h3>Creator state</h3>
-              <dl>
-                <div><dt>Owner</dt><dd>Ben</dd></div>
-                <div><dt>Status</dt><dd>Needs reply</dd></div>
-                <div><dt>Owed</dt><dd>$0</dd></div>
-                <div><dt>Spend</dt><dd>New</dd></div>
-              </dl>
-            </aside>
-          </div>
+        <div class="trust-line">
+          <p>Built around the tools creator teams already use</p>
+          <div><span>Instagram</span><span>Google Sheets</span><span>Drive</span><span>Meta ads</span></div>
         </div>
       </section>
 
-      <section class="problem-band" id="problems">
+      <section class="problem grid-paper" id="problem">
+        <div class="section-heading centered">
+          <p class="pill-label">What breaks today</p>
+          <h2>Six tools. One creator. Nobody knows what is next.</h2>
+          <p>CreatorBoard adds the missing operating layer without asking your team to rebuild its process.</p>
+        </div>
+
+        <div class="problem-board">
+          <article><span>01</span><strong>Instagram has the conversation.</strong><p>It does not show who owns the next action.</p></article>
+          <article><span>02</span><strong>Sheets have the roster.</strong><p>They do not show the latest blocker.</p></article>
+          <article><span>03</span><strong>Drive has the files.</strong><p>It does not show whether the ad can run.</p></article>
+          <article><span>04</span><strong>Meta has performance.</strong><p>It does not have payment context.</p></article>
+        </div>
+      </section>
+
+      <section class="workflow speckle" id="workflow">
         <div class="section-heading">
-          <p class="eyebrow">What breaks today</p>
-          <h2>The creator program lives in six places. Nobody knows what is actually next.</h2>
+          <p class="pill-label">One working queue</p>
+          <h2>The inbox tells the team what to do next.</h2>
         </div>
-        <div class="problem-list">
-          <p>Instagram DMs show the conversation, but not who owns it.</p>
-          <p>Sheets show the roster, but not the latest blocker.</p>
-          <p>Drive has the raw clips, but not whether ads can run yet.</p>
-          <p>Meta has spend and access, but not payment context.</p>
-          <p>YouTube and Google creator ads grow into their own second tracker.</p>
-          <p>Multiple people reply, so work gets doubled, dropped, or guessed.</p>
-        </div>
-      </section>
-
-      <section class="hub-section" id="hub">
-        <div class="section-heading narrow">
-          <p class="eyebrow">The V1 shape</p>
-          <h2>A partnerships hub, not another CRM.</h2>
-          <p>
-            CreatorBoard should feel like the sheet Ben already trusts, with the missing operational layer added on top.
-          </p>
-        </div>
-
-        <div class="hub-layout">
-          <div class="hub-column">
-            <span class="column-label">Inbox</span>
-            <h3>Every DM has an owner and a next step.</h3>
-            <p>Pull in Instagram creator conversations, assign them to the right person, and flag what still needs a reply.</p>
-          </div>
-          <div class="hub-column">
-            <span class="column-label">Creator</span>
-            <h3>One record for the whole partnership.</h3>
-            <p>Handle, niche, code, size, shipping, PayPal, access status, uploaded assets, and notes stay beside the thread.</p>
-          </div>
-          <div class="hub-column">
-            <span class="column-label">Ads</span>
-            <h3>Ad instructions and performance stay attached.</h3>
-            <p>See what to run, where the raw files live, current spend, ROAS, impressions, purchases, and payout math.</p>
+        <div class="workflow-board paper" aria-label="Example CreatorBoard workspace">
+          <div class="workflow-tabs"><span class="active">Needs action</span><span>Waiting</span><span>Completed</span></div>
+          <div class="workflow-stat"><strong>17</strong><span>creators need team action</span></div>
+          <div class="workflow-stat"><strong>38</strong><span>uploaded clips need review</span></div>
+          <div class="workflow-stat"><strong>12</strong><span>payment questions are waiting</span></div>
+          <div class="workflow-copy">
+            <h3>Open the app and know what matters in 30 seconds.</h3>
+            <p>Search every message, assign the owner, update the status, and keep the reply composer beside the full thread.</p>
           </div>
         </div>
       </section>
 
-      <section class="offerings" id="offerings">
-        <div class="section-heading">
-          <p class="eyebrow">Offerings to nail first</p>
-          <h2>The product earns its keep by removing small daily headaches.</h2>
+      <section class="pricing grid-paper" id="pricing">
+        <div class="section-heading centered">
+          <p class="pill-label">Simple monthly pricing</p>
+          <h2>Pick the size of your creator program.</h2>
         </div>
-
-        <div class="offering-list">
+        <div class="plans">
           <article>
-            <span>01</span>
-            <div>
-              <h3>Shared creator inbox</h3>
-              <p>Meta and Instagram DMs in a team queue with owner, status, last touch, and “needs reply” views.</p>
-            </div>
+            <div><p>Starter</p><strong>$29</strong><small>/ month</small></div>
+            <ul><li>1 Instagram account</li><li>100 active creators</li><li>Action inbox and search</li></ul>
+            <a href="https://app.creatorboard.io/login">Choose Starter <span aria-hidden="true">→</span></a>
+          </article>
+          <article class="featured">
+            <span class="plan-banner">Best for most teams</span>
+            <div><p>Pro</p><strong>$79</strong><small>/ month</small></div>
+            <ul><li>3 Instagram accounts</li><li>500 active creators</li><li>Assignments and next actions</li></ul>
+            <a href="https://app.creatorboard.io/login">Choose Pro <span aria-hidden="true">→</span></a>
           </article>
           <article>
-            <span>02</span>
-            <div>
-              <h3>Action state per creator</h3>
-              <p>Clear next step: waiting on creator, waiting on team, needs payment, needs asset, ready to run, or paused.</p>
-            </div>
-          </article>
-          <article>
-            <span>03</span>
-            <div>
-              <h3>Payments without a payment tool</h3>
-              <p>Base fee, spend percentage, bonus, PayPal, paid status, and monthly owed amount beside the conversation.</p>
-            </div>
-          </article>
-          <article>
-            <span>04</span>
-            <div>
-              <h3>Ad instructions and asset handoff</h3>
-              <p>What to film, what has been uploaded, where the Drive folder is, and what creative is ready for editing.</p>
-            </div>
-          </article>
-          <article>
-            <span>05</span>
-            <div>
-              <h3>Meta and YouTube performance</h3>
-              <p>Spend, ROAS, impressions, purchases, creator code, and fatigue signals without digging through ad accounts.</p>
-            </div>
-          </article>
-          <article>
-            <span>06</span>
-            <div>
-              <h3>Sheets and Drive stay in the loop</h3>
-              <p>Import the current roster, sync clean fields back, and keep Google Drive as the place where raw files live.</p>
-            </div>
+            <div><p>Team</p><strong>$199</strong><small>/ month</small></div>
+            <ul><li>Expanded account limits</li><li>Priority onboarding</li><li>More support and control</li></ul>
+            <a href="mailto:nick@raxdigital.com">Talk to us <span aria-hidden="true">→</span></a>
           </article>
         </div>
       </section>
 
-      <section class="positioning">
-        <div>
-          <p class="eyebrow">Positioning</p>
-          <h2>For teams that do not want another tool, but need the work to stop slipping.</h2>
+      <section class="final-cta speckle">
+        <div class="cta-window">
+          <div>
+            <p class="label">Your creator inbox is not a CRM.</p>
+            <h2>Give every conversation a next step.</h2>
+            <a class="button primary-button" href="https://app.creatorboard.io/login">Open CreatorBoard <span aria-hidden="true">→</span></a>
+          </div>
+          <div class="cta-stack" aria-hidden="true"><span>Needs reply</span><span>Content uploaded</span><span>Payment due</span></div>
         </div>
-        <p>
-          The line to defend: CreatorBoard is the operating layer for creator ad programs. It does not replace Meta, Shopify, Sheets, Drive, or Slack. No CRM cosplay. No dashboard theater. It keeps the team from losing the thread.
-        </p>
       </section>
     </main>
 
     <footer class="site-footer">
-      <p>CreatorBoard</p>
+      <div>
+        <strong>CreatorBoard</strong>
+        <p>Creator operations without CRM cosplay.</p>
+      </div>
       <nav aria-label="Legal">
-        <a href="/privacy">Privacy</a>
-        <a href="/terms">Terms</a>
-        <a href="/data-deletion">Data deletion</a>
+        <a href="/privacy/">Privacy</a>
+        <a href="/terms/">Terms</a>
+        <a href="/data-deletion/">Data deletion</a>
       </nav>
     </footer>
   </body>
